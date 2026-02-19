@@ -28,7 +28,6 @@ main {
   justify-content: center;
   justify-self: center;
   width: 100vw;
-  background-color: red;
 }
 .carousel .wrapper .details {
   position: absolute;
@@ -41,9 +40,15 @@ main {
 .carousel .wrapper .details h1, .carousel .wrapper .details h2 {
   margin: 0;
 }
+.carousel .wrapper .details .mobile-navigation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 .carousel .wrapper .details .vertical-line {
   width: 1px;
-  height: 100px;
+  margin-top: 1.5rem;
+  height: 70px;
   background-color: rgba(255, 255, 255, 0.551);
 }
 .carousel video {
@@ -55,30 +60,31 @@ main {
 }
 .carousel button {
   position: absolute;
-  width: 40vw;
+  width: 33vw;
   height: 100%;
   z-index: 1;
   border: none;
   background: none;
-  cursor: pointer;
-  display: flex;
+  cursor: none;
+  display: none;
   align-items: center;
   gap: 0.5rem;
   padding-inline: 3.5rem;
   color: inherit;
   font-size: 1.1rem;
   font-family: inherit;
+  letter-spacing: 0.1rem;
 }
 .carousel button img {
   width: 0.7rem;
 }
 .carousel #next {
-  left: 60vw;
+  left: 67vw;
   justify-content: flex-end;
 }
 
-#currentVid {
-  font-size: 1.5rem;
+.currentVid {
+  font-size: 2rem;
 }
 
 nav {
@@ -101,7 +107,7 @@ nav button {
   cursor: pointer;
 }
 nav button img {
-  width: 1.2rem;
+  width: 1.5rem;
 }
 nav a {
   color: inherit;
@@ -109,7 +115,7 @@ nav a {
 }
 nav ul {
   display: flex;
-  gap: 0.75rem;
+  gap: 1.75rem;
   list-style-type: none;
   display: none;
 }
@@ -120,11 +126,7 @@ nav ul li:hover {
   transform: scale(1.1);
 }
 nav ul img {
-  width: 1.2rem;
-}
-
-.mobile-menu {
-  display: none;
+  width: 1.5rem;
 }
 
 footer {
@@ -139,16 +141,33 @@ footer {
   gap: 0.75rem;
   font-size: 0.8rem;
   padding-bottom: 2rem;
+  display: none;
 }
 footer p {
   margin: 0;
+  display: flex;
+  gap: 0.75rem;
+  max-width: 500px;
+  text-align: end;
 }
-footer span {
+footer a:hover {
+  color: rgba(255, 255, 255, 0.551);
+}
+
+.bold {
   font-weight: 800;
+}
+
+.mobile-menu {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .mobile-menu.open {
   display: flex;
+  flex-direction: column;
   position: absolute;
   background-color: #121212;
   width: 100vw;
@@ -156,24 +175,98 @@ footer span {
   top: 0;
   left: 0;
   z-index: -1;
+  opacity: 1;
+  pointer-events: auto;
+}
+.mobile-menu.open .credits {
+  position: fixed;
+  bottom: 0;
+  padding-inline: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  width: 100%;
+}
+.mobile-menu.open .credits p {
+  display: flex;
+  gap: 1.75rem;
+  justify-content: center;
+}
+.mobile-menu.open .credits a {
+  text-decoration: underline;
+}
+.mobile-menu.open .credits a:hover {
+  color: rgba(255, 255, 255, 0.551);
 }
 
 .mobile-socials.open {
-  padding-top: 7rem;
+  margin-top: 7rem;
   display: flex;
   align-items: center;
   width: 100%;
+  max-height: 50vh;
+  overflow: auto;
   flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(128, 128, 128, 0.438) transparent;
 }
 
-@media screen and (min-width: 640px) {
+#custom-cursor {
+  background-color: #121212;
+  border-radius: 1rem;
+  padding: 0.75rem 2rem;
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  top: -5%;
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+#custom-cursor::after {
+  position: absolute;
+  content: "PREV";
+  top: 0;
+  left: 0;
+  font-size: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  letter-spacing: 0.1rem;
+}
+#custom-cursor.show {
+  opacity: 1;
+}
+
+#custom-cursor.prev::after {
+  content: "PREV";
+}
+
+#custom-cursor.next::after {
+  content: "NEXT";
+}
+
+@media screen and (min-width: 1100px) {
   #menu-btn {
     display: none;
   }
   .mobile-menu {
     display: none;
   }
+  .mobile-socials.open,
+  .mobile-menu.open {
+    display: none;
+  }
   .desktop-socials {
+    display: flex;
+  }
+  .carousel button {
+    display: flex;
+  }
+  .mobile-navigation span {
+    display: none;
+  }
+  footer {
     display: flex;
   }
 }/*# sourceMappingURL=styles.css.map */
