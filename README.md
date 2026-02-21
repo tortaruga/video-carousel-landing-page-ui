@@ -7,15 +7,11 @@ A recreation of the UI from the official website of [JYPE Entertainment](https:/
 
 - Desktop Version
 
-<video controls muted autoplay loop> 
-  <source src="./assets/vids/jyp-desktop.mp4" type="video/mp4">
-</video>  
+![original desktop design for comparison](./assets/original-design/jyp-desktop.gif)
 
 - Mobile Version
 
-<video controls muted autoplay loop>  
-  <source src="./assets/vids/jyp-mobile.mp4" type="video/mp4">
-</video> 
+![original mobile design for comparison](./assets/original-design/jpy-mobile.gif)
 
 
 ## Features Replicated
