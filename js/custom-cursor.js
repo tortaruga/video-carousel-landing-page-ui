@@ -1,14 +1,9 @@
-// on mouseenter make it visible
-// on mouseleave hide it
-// on mousemove update position
-
-import { carouselBtns } from "./DOMvars.js"; 
-
-const customCursor = document.getElementById('custom-cursor'); 
+import { carouselBtns, customCursor } from "./DOMvars.js";  
 
 carouselBtns.forEach(btn => {
+    // show custom cursor when the button areas are hovered
     btn.addEventListener('mouseenter', (e) => {
-        customCursor.classList.add('show');
+        customCursor.classList.add('show'); 
         
         if (e.currentTarget.id === 'prev') {
             customCursor.classList.add('prev');
@@ -21,14 +16,15 @@ carouselBtns.forEach(btn => {
 })
 
 carouselBtns.forEach(btn => btn.addEventListener('mouseleave', () => {
+    // hide the custom cursor when hovering away
     customCursor.classList.remove('show'); 
 }))
 
+// move custom cursor to follow the mouse
 document.addEventListener('mousemove', (e) => {
     const x  = e.clientX;
     const y = e.clientY;
  
-    // customCursor.style.transform = `translate(${x}px ${y}px)`; 
     customCursor.style.top = `${y}px`;
     customCursor.style.left = `${x}px`;
 })

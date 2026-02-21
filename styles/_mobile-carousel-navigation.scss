@@ -1,0 +1,28 @@
+.mobile-navigation {
+    display: flex; 
+    align-items: center;   
+    position: absolute; 
+    z-index: 1;   
+    bottom: 0;  
+    justify-content: flex-end;     
+    width: 100vw;  
+    height: 70px; 
+ 
+    .currentVid { 
+        width: 50%; 
+        text-align: end; 
+        padding-right: 1rem;   
+    }
+
+    .carousel-length {
+        width: 50%;  
+        padding-left: 1rem; 
+    }
+}
+ 
+.vertical-line {
+    width: 1px;
+    margin-top: 1.5rem; 
+    height: 70px;  
+    background-color: rgba(255, 255, 255, 0.551);  
+}

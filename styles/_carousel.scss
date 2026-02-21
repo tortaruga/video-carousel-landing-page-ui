@@ -1,0 +1,64 @@
+.carousel {
+    position: absolute; 
+    display: flex;  
+
+    .wrapper {
+        display: flex; 
+        justify-content: center;  
+        justify-self: center;
+        width: 100vw;
+
+        .details {   
+            position: absolute; 
+            display: flex;
+            flex-direction: column; 
+            align-items: center;  
+            bottom: 0;
+            transition: transform .65s; 
+            width: 100vw; 
+           
+            h1, h2 {
+                margin: 0;
+            }
+        }
+    }
+
+    video {
+        object-fit: cover; 
+        height: 100vh;  
+        width: 100vw; 
+        transition: transform .6s;  
+    }
+
+    button {
+        position: absolute; 
+        width: 33vw;   
+        height: 100%;  
+        z-index: 1; 
+        border: none;
+        background: none; 
+        cursor: none;    
+        display: none;
+        align-items: center;
+        gap: .5rem;
+        padding-inline: 3.5rem;  
+        color: inherit;
+        font-size: 1.1rem;  
+        font-family: inherit;
+        letter-spacing: .1rem;
+
+        img {
+            width: .7rem;   
+        } 
+    }
+
+    #next {
+        left: 67vw;      
+        justify-content: flex-end; 
+    }
+}
+
+.currentVid {
+    font-size: 2rem;   
+}
+ 

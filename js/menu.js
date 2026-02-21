@@ -1,11 +1,8 @@
-const menuBtn = document.getElementById('menu-btn');
-const menuIcon = document.querySelector('#menu-btn img');
-const mobileMenu = document.querySelector('.mobile-menu');
-const mobileSocials = document.querySelector('.mobile-socials');
+import { menuBtn, menuIcon, mobileMenu, mobileSocials } from "./DOMvars.js";
 
 const menuIcons = {
-    false: './assets/icons/menu.svg',
-    true: './assets/icons/close.svg', 
+  false: './assets/icons/menu.svg',
+  true: './assets/icons/close.svg',  
 };
 
 let isOpen = false;

@@ -1,0 +1,26 @@
+footer {
+    position: fixed;
+    z-index: 2;
+    bottom: 0; 
+    width: 100vw; 
+    display: flex;
+    justify-content: space-between;  
+    padding-inline: 3.5rem;
+    flex-wrap: wrap;
+    gap: .75rem; 
+    font-size: .8rem;  
+    padding-bottom: 2rem;   
+    display: none;
+
+    p {
+        margin: 0; 
+        display: flex;
+        gap: .75rem;   
+        max-width: 500px; 
+        text-align: end;     
+    }
+
+    a:hover {
+        color: rgba(255, 255, 255, 0.551);  
+    }
+}

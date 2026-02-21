@@ -1,92 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  color: white;
-  font-family: montserrat, sans-serif;
-}
-
-a {
-  color: inherit;
-}
-
-main {
-  max-width: 100vw;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-}
-
-.carousel {
-  position: absolute;
-  display: flex;
-}
-.carousel .wrapper {
-  display: flex;
-  justify-content: center;
-  justify-self: center;
-  width: 100vw;
-}
-.carousel .wrapper .details {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  bottom: 0;
-  transition: transform 0.65s;
-}
-.carousel .wrapper .details h1, .carousel .wrapper .details h2 {
-  margin: 0;
-}
-.carousel .wrapper .details .mobile-navigation {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.carousel .wrapper .details .vertical-line {
-  width: 1px;
-  margin-top: 1.5rem;
-  height: 70px;
-  background-color: rgba(255, 255, 255, 0.551);
-}
-.carousel video {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 100vh;
-  width: 100vw;
-  transition: transform 0.6s;
-}
-.carousel button {
-  position: absolute;
-  width: 33vw;
-  height: 100%;
-  z-index: 1;
-  border: none;
-  background: none;
-  cursor: none;
-  display: none;
-  align-items: center;
-  gap: 0.5rem;
-  padding-inline: 3.5rem;
-  color: inherit;
-  font-size: 1.1rem;
-  font-family: inherit;
-  letter-spacing: 0.1rem;
-}
-.carousel button img {
-  width: 0.7rem;
-}
-.carousel #next {
-  left: 67vw;
-  justify-content: flex-end;
-}
-
-.currentVid {
-  font-size: 2rem;
-}
-
 nav {
   position: fixed;
   z-index: 2;
@@ -154,15 +65,66 @@ footer a:hover {
   color: rgba(255, 255, 255, 0.551);
 }
 
-.bold {
-  font-weight: 800;
+.carousel {
+  position: absolute;
+  display: flex;
+}
+.carousel .wrapper {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  width: 100vw;
+}
+.carousel .wrapper .details {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  bottom: 0;
+  transition: transform 0.65s;
+  width: 100vw;
+}
+.carousel .wrapper .details h1, .carousel .wrapper .details h2 {
+  margin: 0;
+}
+.carousel video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100vh;
+  width: 100vw;
+  transition: transform 0.6s;
+}
+.carousel button {
+  position: absolute;
+  width: 33vw;
+  height: 100%;
+  z-index: 1;
+  border: none;
+  background: none;
+  cursor: none;
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding-inline: 3.5rem;
+  color: inherit;
+  font-size: 1.1rem;
+  font-family: inherit;
+  letter-spacing: 0.1rem;
+}
+.carousel button img {
+  width: 0.7rem;
+}
+.carousel #next {
+  left: 67vw;
+  justify-content: flex-end;
+}
+
+.currentVid {
+  font-size: 2rem;
 }
 
 .mobile-menu {
-  position: absolute;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s;
+  display: none;
 }
 
 .mobile-menu.open {
@@ -175,8 +137,6 @@ footer a:hover {
   top: 0;
   left: 0;
   z-index: -1;
-  opacity: 1;
-  pointer-events: auto;
 }
 .mobile-menu.open .credits {
   position: fixed;
@@ -208,6 +168,33 @@ footer a:hover {
   flex-direction: column;
   scrollbar-width: thin;
   scrollbar-color: rgba(128, 128, 128, 0.438) transparent;
+}
+
+.mobile-navigation {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  justify-content: flex-end;
+  width: 100vw;
+  height: 70px;
+}
+.mobile-navigation .currentVid {
+  width: 50%;
+  text-align: end;
+  padding-right: 1rem;
+}
+.mobile-navigation .carousel-length {
+  width: 50%;
+  padding-left: 1rem;
+}
+
+.vertical-line {
+  width: 1px;
+  margin-top: 1.5rem;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.551);
 }
 
 #custom-cursor {
@@ -246,6 +233,35 @@ footer a:hover {
   content: "NEXT";
 }
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: white;
+  font-family: montserrat, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+main {
+  max-width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+video {
+  filter: brightness(0.75);
+}
+
+.bold {
+  font-weight: 800;
+}
+
 @media screen and (min-width: 1100px) {
   #menu-btn {
     display: none;
@@ -263,7 +279,7 @@ footer a:hover {
   .carousel button {
     display: flex;
   }
-  .mobile-navigation span {
+  .mobile-navigation {
     display: none;
   }
   footer {

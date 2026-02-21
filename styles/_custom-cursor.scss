@@ -1,0 +1,37 @@
+#custom-cursor {
+    background-color: #121212;
+    border-radius: 1rem;
+    padding: .75rem 2rem;  
+    position: fixed;
+    pointer-events: none; 
+    opacity: 0;
+    top: -5%;  
+    transition: opacity .3s; 
+    z-index: 1; 
+
+    &::after {
+        position: absolute;
+        content: 'PREV'; 
+        top: 0;
+        left: 0;  
+        font-size: .6rem;   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%; 
+        letter-spacing: .1rem;
+    }
+
+    &.show {
+        opacity: 1;  
+    }
+}
+
+#custom-cursor.prev::after {
+    content: 'PREV'; 
+}
+
+#custom-cursor.next::after {
+    content: 'NEXT';
+}
